@@ -11,5 +11,11 @@ router.post('/', (req,res,next)=>{
 });
 
 
+router.get('/:productId', (req,res,next)=>{
+
+    const id= req.params.productId;
+    res.status(200).json({message:"products single", id: id});
+});
+
 
 module.exports= router;
