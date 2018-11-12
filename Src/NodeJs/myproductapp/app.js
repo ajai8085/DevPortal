@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const productsRoute = require('./api/routes/products');
 const ordersRoute = require('./api/routes/orders');
+const db= require('./db');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));//Only simple body for url encoded data

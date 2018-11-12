@@ -1,0 +1,6 @@
+{
+    "env": {
+        "MONGO_PASSWORD":"password",
+        "PORT":"4041"
+    }
+}
