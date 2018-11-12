@@ -17,7 +17,7 @@ router.post('/', (req, res, next) => {
     });
 
     product.save();
-    
+
     res.status(201).json({ message: "products created", product });
 });
 

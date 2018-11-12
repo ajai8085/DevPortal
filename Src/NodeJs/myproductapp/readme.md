@@ -1,3 +1,4 @@
-#Readme file Learning nodejs
+Readme file Learning nodejs
+----------------------------------
 
-Run command `npm run dev`
+Run command `npm run start`
