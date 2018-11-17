@@ -2,30 +2,30 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/', (req, res, next) => {
-    res.status(200).json({ message: "orders get all" });
+router.get('/', (req, res) => {
+    res.status(200).json({ message: 'orders get all' });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', (req, res) => {
     const order = { productId: req.body.productId, quantity: req.body.quantity };
-    res.status(201).json({ message: "orders created", order });
+    res.status(201).json({ message: 'orders created', order });
 });
 
 
-router.patch('/:orderId', (req, res, next) => {
+router.patch('/:orderId', (req, res) => {
     const id = req.params.orderId;
-    res.status(200).json({ message: "orders patched", id: id });
+    res.status(200).json({ message: 'orders patched', id: id });
 });
 
-router.delete('/:orderId', (req, res, next) => {
+router.delete('/:orderId', (req, res) => {
     const id = req.params.orderId;
-    res.status(200).json({ message: "order deleted", id: id });
+    res.status(200).json({ message: 'order deleted', id: id });
 });
 
-router.get('/:orderId', (req, res, next) => {
+router.get('/:orderId', (req, res) => {
 
     const id = req.params.orderId;
-    res.status(200).json({ message: "orders single", id: id });
+    res.status(200).json({ message: 'orders single', id: id });
 });
 
 

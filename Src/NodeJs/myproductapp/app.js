@@ -5,7 +5,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const productsRoute = require('./api/routes/products');
 const ordersRoute = require('./api/routes/orders');
-const db= require('./db');
+
+const mongoose= require('mongoose');
+
+
+mongoose.connect('mongodb://localhost:27017/RestDb',{ useNewUrlParser: true });
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));//Only simple body for url encoded data
@@ -23,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use((error, req, res, next) => {
+app.use((error, req, res) => {
     res.status = error.status || 500;
     res.json({ error: { message: error.message } });
 });
